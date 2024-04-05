@@ -1,6 +1,6 @@
 import '@scss/style.scss';
 //add bootstrap
-import * as bootstrap from 'bootstrap';
+//import * as bootstrap from 'bootstrap';
 
 //react components
 //import { createRoot } from 'react-dom/client';
@@ -64,20 +64,20 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-//flsForms.formFieldsInit({ viewPass: false });
+flsForms.formFieldsInit({ viewPass: false });
 
 /* Oтправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-//flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль формы "колличество" */
-//flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
-//flsForms.formRating();
+flsForms.formRating();
 
 /* Модуль работы с select. */
-//import './libs/select.js'
+import './libs/select.js'
 
 /* (В работе) Модуль работы с масками.*/
 /*
@@ -86,7 +86,7 @@ import * as flsForms from "./files/forms/forms.js";
 Документация плагина: https://github.com/RobinHerbots/inputmask
 Сниппет(HTML):
 */
-//import "./files/forms/inputmask.js";
+import "./files/forms/inputmask.js";
 
 /* Модуль работы с ползунком */
 /*
