@@ -1,6 +1,7 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, uniqArray, FLS } from "../functions/functions.js";
 import { flsModules } from "../files/modules.js";
+//import { log } from "console";
 
 // Наблюдатель объектов [всевидещее око]
 // data-watch - можно писать значение для применения кастомного кода
@@ -164,3 +165,35 @@ class ScrollWatcher {
 }
 // Запускаем и добавляем в объект модулей
 flsModules.watcher = new ScrollWatcher({});
+//Shows current block in header
+function currentBlock() {
+	let navItems = document.querySelectorAll('.header__nav__item')
+	let watchItems = document.querySelectorAll('[data-watch]')
+	document.addEventListener('scroll', function (e) {
+		let viewport = document.documentElement.clientHeight / 2
+		let overLaps = [];
+		let target;
+		for (let item of watchItems) {
+			if (item.classList.contains('_watcher-view')) {
+				overLaps.push(item)
+				target = item.getAttribute('data-watch')
+			}
+		}
+		if (overLaps.length > 1) {
+			let first = overLaps[0].getBoundingClientRect().bottom;
+			first > viewport ? overLaps.splice(1, 1) : overLaps.splice(0, 1)
+			target = overLaps[0].getAttribute('data-watch')
+		}
+		for (let nav of navItems) {
+
+			if (nav.getAttribute('data-goto').slice(1) == target) {
+				nav.classList.add('td')
+			}
+			else {
+				nav.classList.remove('td')
+			}
+		}
+	}
+	)
+}
+currentBlock()

@@ -236,6 +236,7 @@ export function spollers() {
          const el = e.target;
          if (el.closest('[data-spoller]')) {
             const spollerTitle = el.closest('[data-spoller]');
+            const spollersItem = spollerTitle.closest('.spollers__item');
             const spollersBlock = spollerTitle.closest('[data-spollers]');
             const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
             const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
@@ -244,6 +245,7 @@ export function spollers() {
                   hideSpollersBody(spollersBlock);
                }
                spollerTitle.classList.toggle('_spoller-active');
+               spollersItem.classList.toggle('_spollerItem-active');
                _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
             }
             e.preventDefault();

@@ -143,7 +143,7 @@ body {
 
 // Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
 // Для подключения/отключения конкретных стилей смотри base.scss
-//@import "@scss/base/base";
+@import "@scss/base/base";
 
 // Подключение стилей общих элементов проекта
 //@import "@scss/null/common";
@@ -154,42 +154,76 @@ body {
 
 // Подключение стилей отдельных страниц
 //@import "home";
+.header {
+   height: rem(150);
+   width: 100%;
+   background-color: rgb(255, 209, 217);
+   position: absolute;
+   top: 0;
+   left: 0;
 
-/*body {
-   // font-size: 40px;
-   color: red;
-   //font-weight: 700;
-   text-decoration: underline;
-   //background: url('@img/clarity_users-line1.png');
-   //background: url('../img/coveradvice_2.jpg');
-}
+   &._header-scroll {
+      position: fixed;
+      background-color: rgb(255, 209, 217, 0.7);
+   }
 
-.img {
-   width: 100px;
-   height: 100px;
-   background: url('../img/coveradvice_2.jpg');
-}
-
-@media (max-width:1000px) {
-   body {
-      background-color: green;
+   &__container {
+      height: 100%;
    }
 }
 
-@media (max-width:1000px) {
-   .img {
-      background-color: red;
+nav {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   column-gap: rem(25);
+   justify-content: space-between;
+   align-items: center;
+
+   .header__nav__item {
+      font-size: 30px;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+
+      &.td {
+         text-decoration: underline;
+      }
    }
 }
 
-.react {
-   font-size: 100px;
+.main {
+   padding-top: rem(150);
 }
 
-button {
-   font-weight: 800;
+section,
+footer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 60px;
+   border: 11px solid #000;
 }
 
-img {
-   padding: 30px;
-}*/
+.home {
+   min-height: 600px;
+}
+
+.hero {
+   min-height: 1200px;
+}
+
+.about {
+   min-height: 1800px;
+}
+
+.contacts {
+   min-height: 700px;
+}
+
+.footer {
+   min-height: 200px;
+}
