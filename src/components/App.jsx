@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Text from "./Text";
+import { SvgCulcIcon, SvgMailIcon } from "./SvgIcons";
 
 export const App = () => {
    const [count, setCount] = useState(0)
@@ -13,6 +14,8 @@ export const App = () => {
          <img style={{ color: 'red' }} src="img/Vectorcontact__1.png" alt="" />
          <img src="img/arrow.svg" alt="" />
          <img style={{ width: '200px', height: '200px' }} src="img/cover.jpg" alt="" />
+         <SvgCulcIcon />
+         <SvgMailIcon />
       </div>
    )
 }
